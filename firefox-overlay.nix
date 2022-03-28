@@ -157,7 +157,7 @@ let
         + optionalString (96 >= getMajorVersion version) (":" + makeLibraryPath [self.xorg.libXtst]);
     })) {
       ${
-        if super.firefox-unwrapped ? applicationName then
+        if super.firefox-unwrapped ? binaryName || super.firefox-unwrapped ? applicationName then
           "applicationName"
         else
           "browserName"
